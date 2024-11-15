@@ -30,6 +30,10 @@ int main(){
     int n;
     cin>>n;
     get_euler(n);
-    
+    long long res=0;
+    for(int i=1;i<=n;i++){
+        res+=euler[i];
+    }
+    cout<<res<<endl;
     return 0;
 }
