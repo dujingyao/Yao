@@ -91,7 +91,8 @@ int Get(MElist L,int i,MEnode &e){
 void f(MElist L){
     int i;
     for(i=0;i<L.length;i++){
-        printf("药品的编号为:%s,药品的名称为:%s,药品的库存为:%d\n",L.newME[i].id,L.newME[i].name,L.newME[i].number);
+        printf("药品的编号为:%s,药品的名称为:%s,药品的库存为:%d\n",
+        L.newME[i].id,L.newME[i].name,L.newME[i].number);
     }
 }
 //库存变化
