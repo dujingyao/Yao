@@ -16,7 +16,6 @@ void insertionSort(vector<int>& arr) {
         arr[j+1]=key; // 插入正确的位置
     }
 }
-
 int main() {
     vector<int> array;
     int n;
