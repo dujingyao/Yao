@@ -12,7 +12,6 @@ int qmi(int a,int b,int m){
     }
     return res;
 }
-
 bool check(int a,int b){
     if(a%b!=0) return true;
     else return false;
