@@ -17,7 +17,7 @@ int main(){
     for(int i=1;i<=n;i++){
         for(int j=0;j<=m;j++){
             for(int k=0;k*v[i]<=j;k++){
-                f[i][j]=max(f[i][j],f[i-1][j-k*v[i]]+k*w[k]);
+                f[i][j]=max(f[i][j],f[i-1][j-k*v[i]]+k*w[i]);
             }
         }
     }
