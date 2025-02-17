@@ -21,6 +21,8 @@ int main(){
             }
         }
     }
+    //优化版
+    
     cout<<f[n][m]<<endl;
 
     return 0;
