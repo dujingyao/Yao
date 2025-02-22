@@ -6,7 +6,7 @@ int n;
 int a[10];
 int b[MAX];
 void dfs(int u){
-    if(u>n){
+    if(u>n){//u代表位置
         for(int i=1;i<=n;i++){
             cout<<b[i]<<" ";
         }
