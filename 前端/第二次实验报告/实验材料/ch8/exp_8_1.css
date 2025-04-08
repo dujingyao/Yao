@@ -1,0 +1,18 @@
+/* exp_8_1.css */
+ul {
+	list-style-type: none;text-align: center;
+	padding: 0;width: 643px;
+}
+.color-red {color: red;font-size: 46px;font-family: 隶书;}
+li {font-size: 36px;display: inline;width: 190px;}
+#color1 {color: blue;}
+#color2 {color: #AA007F;}
+#color3 {color: #0000DD;}
+#color4 {color: #FFAA00;}
+#color5 {color: #550000;}
+#color6 {color: #55FF00;}
+
+#container {
+	background: #FAFAFA;width: 643px;
+	height: 285px;margin: 0 auto;
+}

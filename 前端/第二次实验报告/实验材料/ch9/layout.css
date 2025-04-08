@@ -1,0 +1,74 @@
+/*layout.css*/
+body {
+	font-family: Verdana;
+	font-size: 16px;
+	margin: 0;
+	text-align: center;
+	/*整个页面居中显示*/
+}
+
+p {
+	margin: 2px;
+}
+
+#Container {
+	margin: 0 auto;
+	width: 900px;
+}
+
+#Header {
+	height: 118px;
+	margin-bottom: 5px;
+	background-color: rgb(230, 230, 230);
+}
+
+#PageBody {
+	height: 380px;
+	margin-bottom: 5px;
+}
+
+#SideBar {
+	float: left;
+	width: 200px;
+	height: 380px;
+	background: #9ff000;
+}
+
+#MainBody {
+	float: right;
+	width: 695px;
+	height: 380px;
+	background: #cff000;
+}
+
+/*注意到IE 3像素的bug，固定宽度后采用左右浮动可以避免之*/
+#Footer {
+	height: 60px;
+	background-color: rgb(230, 230, 230);
+	text-align: center;
+	font-family: "Courier New";
+	font-size: 12px;
+	padding-top: 10px;
+}
+
+img {
+	float: left;
+}
+
+span {
+	width: 50px;
+	margin-top: 40px;
+	font-size: 20px;
+	font-family: "华文新魏";
+	cursor: pointer;
+}
+
+ul {
+	list-style-type: none;
+}
+
+h3 {
+	text-align: center;
+	color: red;
+	font-size: 24px;
+}

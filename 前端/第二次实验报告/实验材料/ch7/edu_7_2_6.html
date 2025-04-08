@@ -1,0 +1,25 @@
+<!-- edu_7_2_6.html -->
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>导入外部样式（External Style）</title>
+		<style type="text/css">
+			@import url("out.css");
+			@import url("out1.css");
+			@import url("out2.css");
+
+			#h2_css {
+				font-size: 24px;
+				/*定义字体大小*/
+				font-style: italic;
+				/*定义字体样式*/
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="int_css">这个标题h1使用了导入外部样式表中的类样式(int_css)。</h1>
+		<h2 id="h2_css">这个标题h2使用内部样式中的ID样式(h2_css)。</h2>
+		<h2>这个标题h2没有使用样式，out1.css和out2.css未定义。</h2>
+	</body>
+</html>

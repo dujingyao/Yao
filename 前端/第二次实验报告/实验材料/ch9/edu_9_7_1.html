@@ -1,0 +1,139 @@
+<!-- edu_9_7_1.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>中华礼仪</title>
+		<style type="text/css">
+			#container {margin: 0 auto;width: 1200px;height: 900px;
+				background-color: #F1F2F3;
+				box-shadow: 0 0 15px 10px #F0ABF2;/* 设置边框阴影 */
+			}
+			#ly {padding-top: 20px;height: 60px;width: 1200px;text-align: center;
+				color: #00ABE9;font-size: 36px;font-family: 黑体;}
+			#first {margin: 0 auto;width: 996px;
+				height: 406px;border: 15px solid #f5F8fc;}
+			#left {width: 490px;height: 406px;
+				display: inline-block;margin-right: 10px;overflow: hidden;}
+			#right {width: 490px;height: 406px;background-color: #E3F9FE;
+				display: inline-block;vertical-align: top;/* 让图层上浮 */
+				position: relative;/* 礼仪用语div层叠显示需将父div相对定位 */
+			}
+			/*礼仪用语div样式 */
+			#lyhover {position: absolute;top: 0;left: 0;
+				width: 490px;height: 406px;background-color: #E3F9FE;
+				display: inline-block;vertical-align: top;/* 让图层上浮 */
+				overflow: auto;/* 溢出时显示滚动条 */
+			}
+			/* 礼仪用语初始时不显示 */
+			#lyhover {display: none;}
+			/* 在左边div上盘旋时显示礼仪用语 */
+			#first:hover #lyhover {display: block;}
+			/* 在礼仪用语上盘旋时，让礼仪用语可能滚动显示其余内容 */
+			#left:hover {overflow: scroll;}
+			#second {width: 996px;height: 285px;margin: 20px auto;
+				background: #0072D4;border: 15px solid #0072D4;}
+			#lyleft {display: inline-block;vertical-align: top;
+				width: 475px;height: 260px;}
+			#lyright {width: 511px;height: 260px;display: inline-block;}
+			#lyright p {margin: 15px auto;color: white;font-size: 28px;}
+			#lysm {padding: 20px 25px;}
+			p {font-size: 20px;text-indent: 2em;}
+			#aside {text-align: center;vertical-align: middle;color: #FE0000;
+				margin: 10px auto;background-color: #F5F5F5;height: 20px;}
+			#lyf {text-align: right;padding: 20px auto;}
+			ul {margin: 50px auto;list-style-type: none;height: 45px;
+				width: 475px;position: relative;/* 根容器上相对定位，方便定位 */
+			}
+			li {width: 240px;height: 40px;margin: 10px 10px;
+				border: 1px solid #2AA6DD;border-radius: 15px;padding: 15px 20px;
+				background-color: #0062B9;/* 不在此处设置定位方式，放在ul中更方便 */
+			}
+			/* 敬词、谦称初始均不显示 */
+			.reveal-modal {display: none;}
+			.reveal-modal {
+				/* 列表包裹的div设置为绝对定位，ul设置为相对定位 */
+				position: absolute;z-index: 99;
+				top: -598px;left: 0px;}
+			/* 在敬词和谦称所在的列表上盘旋上，显示敬词和谦称pdf文档 */
+			li div:hover .reveal-modal {display: block;}
+			#jc,#qc {font-size: 36px;color: white;
+				margin: 5px;padding: 4px 40px;}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="ly">中华礼仪用语</div>
+			<div id="first">
+				<div id="left">
+					<img src="zhly-9-7.jpg" width="">
+				</div>
+				<div id="right">
+					<div id="lyhover">
+						<marquee behavior="alternate" direction="up" onmouseover="stop()" onmouseout="start()"
+							width="490px" height="406px">
+							<p>头次见面用久仰，很久不见说久违。</p>
+							<p>认人不清用眼拙，向人表歉用失敬。</p>
+							<p>请人批评说指教，求人原谅用包涵。</p>
+							<p>麻烦别人说打扰，不知适宜用冒昧。</p>
+							<p>请人帮忙说劳驾，请给方便说借光。</p>
+							<p>求人解答用请问，请人指点用赐教。</p>
+							<p>赞人见解用高见，自身意见用拙见。</p>
+							<p>看望别人用拜访，宾客来到用光临。</p>
+							<p>陪伴朋友用奉陪，中途先走用失陪。</p>
+							<p>等待客人用恭候，迎接表歉用失迎。</p>
+							<p>别人离开用再见，请人不送用留步。</p>
+							<p>欢迎顾客称光顾，答人问候用托福。</p>
+							<p>问人年龄用贵庚，老人年龄用高寿。</p>
+							<p>读人文章用拜读，请人改文用斧正。</p>
+							<p>对方字画为墨宝，招待不周说怠慢。</p>
+							<p>请人收礼用笑纳，辞谢馈赠用心领。</p>
+							<p>问人姓氏用贵姓，回答询问用免贵。</p>
+							<p>表演技能用献丑，别人赞扬说过奖。</p>
+							<p>向人祝贺道恭喜，答人道贺用同喜。</p>
+							<p>请人担职用屈就，暂时充任说承乏。</p>
+						</marquee>
+					</div>
+					<div id="lysm">
+						<p>中国具有五千年文明史，素有“礼仪之邦”之称，中国人也以其彬彬有礼的风貌而著称于世。</p>
+						<p>礼仪文明作为中国传统文化的一个重要组成部分，对中国社会历史发展起了广泛深远的影响，其内容十分丰富，至今读来，依然唇角含香，受益无穷。</p>
+						<p id="lyf">——中华礼仪之邦</p>
+					</div>
+					<div id="aside">
+						<span>----将鼠标移至礼仪图像上，查看更多信息----</span>
+					</div>
+				</div>
+				<!-- 在左边div中img上盘旋时滚动显示歌词 -->
+			</div>
+			<div id="second">
+				<div id="lyleft">
+					<ul>
+						<li>
+							<div style="display: inline;">
+								<span id="jc">敬词</span><!-- 显示敬 词 -->
+								<div id="myModa01" class="reveal-modal">
+									<embed src="zhongguoliyi-jc.pdf" width="1000px" height="850px">
+								</div>
+							</div>
+							<a href="zhongguoliyi-jc.pdf" target="_blank"><img src="downloadBg.png"></a>
+						</li>
+						<li>
+							<div style="display: inline;">
+								<span id="qc">谦称</span><!-- 显示谦称-->
+								<div id="myModal02" class="reveal-modal">
+									<embed src="zhongguoliyi-qc.pdf" width="1000px" height="850px">
+								</div>
+							</div>
+							<a href="zhongguoliyi-qc.pdf" target="_blank" class="download_btn"><img src="downloadBg.png"></a>
+						</li>
+					</ul>
+
+				</div>
+				<div id="lyright">
+					<p>中国人最讲求礼仪，如果每个人都拥有好的礼仪礼节常识，社会将更和谐，纷争也会越来越少。在这个文明社会中，有礼仪的人更受欢迎，如果你也想成为一个有礼仪的人，那你就要精通中华礼仪常识。</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
