@@ -1,0 +1,71 @@
+/* edu_11_7_1.css */
+body,html {padding: 0;margin: 0;}
+body {
+	/* 定义背景图像样式 */
+	background-image: url('topbg.jpg');
+	background-repeat: no-repeat;
+	background-position: center 41px;
+}
+.header {width: 100%;height: 41px;}
+/* 定义头部样式 */
+.left {float: left;width: 76px;height: 41px;}
+em {float: right;width: 350px;height: 41px;font-style: normal;}
+.header a:visited,.header a:link,.header a:active {
+	text-decoration: none;color: black;margin: 0 10px;text-align: center;}
+.header a:hover {text-decoration: underline;margin: 0 10px;
+   text-align: center;}
+.search {width: 1200px;height: 60px;background: white;text-align: center;}
+select {width: 100px;height: 40px;margin: 10px auto;border: none;}
+[type="text"] {width: 900px;height: 40px;
+	margin: 10px auto;border: none;}
+[type="button"] {width: 130px;height: 40px;margin: 10px auto;
+	background-color: red;color: white;border: none;}
+select,input {font-size: 22px;}
+.text {font-size: 18px;width: 36px;height: 60px;}
+.content2 {font-size: 28px;vertical-align: middle;text-align: center;
+	height: 60px;}
+.content2 a {background-color: #e9ddb0;width: 90px;height: 90px;
+	border-radius: 10px;position: relative;color: #bb2500;
+	font-weight: bold;margin: 10px auto;display: inline-block;}
+.content2 a:visited,.content2 a:link,.content2 a:active {
+	text-decoration: none;}
+.content2 a:hover {background-color: #D3D3D3;}
+.content2 a .text {width: 90px;font-size: 21px;height: 32px;}
+.content2 a span {display: block;text-align: center;
+	height: 32px;margin: 25px auto;vertical-align: middle;
+}
+/* 在单元上盘旋时，控制图像显示在右侧  */
+table {position: relative;}
+#parent {width: 600px;height: 400px;}
+#first {display: block;top: 333px;left: 600px;width: 600px;
+	height: 400px;overflow: auto;position: absolute;}
+.image {display: none;}
+.content2:hover .image {display: block;top: 333px;left: 600px;
+	width: 600px;height: 400px;overflow: auto;
+	position: absolute;background-color: #F7EED2;
+}
+/* 3个导航 */
+#container {width: 1200px;height: 180px;position: relative;}
+.news-box {width: 33.3%;height: 60px;background-color: #EEE3B9;
+	line-height: 60px;cursor: pointer;display: inline-block;float: left;}
+.news-box a {text-align: center;display: inline-block;width: 100%;
+	color: black;line-height: 60px;font-size: 27px;height: 60px;
+	padding-top: 10px;padding: 0;margin: 0;border: 0;}
+.news-box a:visited,.news-box a:active,.news-box a:link {
+	text-decoration: none;}
+.news-box .news li a,.news-box .news li {
+	height: 1.2em;font-size: 22px;text-align: left;}
+.news-box .news ul li a:hover {text-decoration: none;}
+.news-box a:hover {background-color: #DA4466;color: white;}
+/* 导航菜单样式 */
+.news {display: none;}
+.news-box .news {width: 1200px;height: 140px;padding: 10px auto;
+	clear: both;position: absolute;top: 60px;left: 0px;}
+.news p {font-size: 22px;text-indent: 2em;line-height: 1.2em;margin: 20px;}
+.active {display: block;background-color: #faf7e6;color: black;}
+/* 导航上盘旋时，切换显示不同内容 */
+.news-box:hover .news {display: block;position: absolute;top: 60px;
+	left: 0px;background-color: #faf7e6;color: black;}
+.footer {height: 30px;text-align: center;
+	vertical-align: middle;font-size: 22px;
+}
