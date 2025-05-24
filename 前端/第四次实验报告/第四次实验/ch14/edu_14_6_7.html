@@ -1,0 +1,49 @@
+<!--  edu_14_6_7.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>验证邮箱的合法性</title>
+    <script type="text/javascript">
+      function emailCheck() {
+        //获取用户输入的邮箱地址相关信息
+        var emailString = document.form1.email.value;
+        var emailLength = emailString.length;
+        var index1 = emailString.indexOf("@");
+        var index2 = emailString.lastIndexOf("."); //取最后1个点
+        var msg = "验证邮箱地址实例:\n\n";
+        msg += "邮箱地址:" + emailString + "\n";
+        msg += "验证信息:";
+        var emailFlag = false;
+        /* 判断邮箱中必须有@和.，且@在前，.在后； @不为首字符，.不为最后一个字符*/
+        if (index1 != -1 && index2 != -1 && index2 - index1 > 0) {/* 说明有@和.*/
+          if (index1>0 && index2<emailLength-1) {/*@不为首字符，.不为最后一个字符 */
+            emailFlag = (index2 >= index1 + 3) ? true : false;
+          } else {
+          emailFlag = false;
+          }
+        }
+        if (!emailFlag) {
+          msg += "邮箱地址不合法!\n\n"
+          msg += "不能同时满足如下条件:\n";
+          msg += "1、邮件地址中同时含有'@'和'.'字符；\n";
+          msg += "2、'@'后必须有'.'，且中间至少间隔2个字符；\n"
+          msg += "3、'@'不为第1个字符，'.'不为最后1个字符。\n"
+        } else {
+          msg += "邮箱地址合法!\n\n";
+          msg += "能同时满足如下条件:\n";
+          msg += "1、邮件地址中同时含有'@'和'.'字符；\n";
+          msg += "2、'@'后必须有'.'，且中间至少间隔2个字符；\n"
+          msg += "3、'@'不为第1个字符，'.'不为最后1个字符。\n"
+        }
+        alert(msg);
+      }
+    </script>
+  </head>
+  <body>
+    <form name="form1">
+      邮箱地址:<input type="text" name="email" value="@">
+      <input type="button" value="验证邮箱地址" onclick="emailCheck()">
+    </form>
+  </body>
+</html>

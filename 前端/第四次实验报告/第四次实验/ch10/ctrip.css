@@ -1,0 +1,81 @@
+/* ctrip.css */
+/* 携程旅行网官网 导航菜单CSS*/
+@charset "utf-8";
+/* ----------------------responsive navigation---------------------- */
+/*=nav-background*/
+#cui_nav{font-family:'microsoft yahei',Arial,sans-serif;text-align:left;font-size:12px;width:100%;}
+.base_nav{width:100%;height:40px;background-color:#2577e3;margin:0 auto 54px;}
+.cui_nav_single .base_nav{margin-bottom:10px;}
+/*=nav*/
+.cui_nav{position:relative;z-index:25;min-width:1000px;max-width:1180px;margin:0 auto;height:40px;line-height:38px;font-size:16px;background-color:#2577e3;}
+.cui_nav li{float:left;display:inline-block;height:38px;_float:none;_display:inline;_zoom:1;_vertical-align:top;}
+.cui_nav li a{font-size:16px;}
+.cui_nav li .cui_nav_has,
+.cui_nav li .cui_nav_non{position:relative;display:block;height:38px;padding:0 7px;color:#fff;_float:left;cursor:pointer;}
+.cui_nav li .cui_nav_has{padding-right:14px;}
+
+.cui_nav li a.cui_nav_non:hover,
+.cui_nav li a.cui_nav_has:hover{height:38px;line-height:38px;background:#fff;color:#06c;border-top:2px solid #ffa024;text-decoration:none;}
+.cui_nav li.cui_nav_o .cui_nav_has,
+.cui_nav li.cui_nav_current .cui_nav_has,
+.cui_nav li.cui_nav_current .cui_nav_non,
+.cui_nav li.cui_nav_current .cui_nav_has:hover{height:38px;background:#fff;color:#06c;border-top:2px solid #ffa024;text-decoration:none;}
+.cui_nav li.divider{width:1px;height:16px;padding-left:0;margin:13px 1px 0;_margin-top:11px;background-color:#1d67dd;}
+
+.cui_nav li.cui_nav_unhover .cui_nav_non,
+.cui_nav li.cui_nav_unhover .cui_nav_has{height:36px;}
+
+/*=sub-nav-marin*/
+#cui_nav_home .cui_nav_non{margin-left:3px;}
+#cui_nav_vac .cui_sub_nav{padding-left:0;}
+#cui_nav_hotel .cui_sub_nav,#cui_nav_vac .cui_sub_nav{padding-left:16px;}
+#cui_nav_flight .cui_sub_nav{padding-left:16px;}
+#cui_nav_trains .cui_sub_nav{padding-left:124px;}
+#cui_nav_car .cui_sub_nav{padding-left:230px;}
+#cui_nav_tuan .cui_sub_nav{padding-left:390px;}
+#cui_nav_g .cui_sub_nav{padding-left:500px;}
+#cui_nav_lpk .cui_sub_nav{padding-left:574px;}
+#cui_nav_sl .cui_sub_nav{padding-left:617px;}
+#cui_nav_more .cui_sub_nav{padding-left:731px;}
+#cui_nav_ticket .cui_sub_nav{padding-left:346px;}
+#cui_nav_destination .cui_sub_nav{padding-left:255px;}
+
+/*=nav-current*/
+.cui_nav li i.cui_ico_triangle{position:absolute;right:4px;top:18px;width:7px;height:4px;overflow:hidden;background-position:-44px -264px;+cursor:pointer;}
+.cui_nav li a:hover .cui_ico_triangle,
+.cui_nav li.cui_nav_current .cui_ico_triangle{background-position:-23px -260px;}
+
+/*=subnav*/
+.cui_nav_current .cui_subnav_wrap,.cui_nav_o .cui_subnav_wrap{display:block;}
+.cui_nav_o .cui_subnav_wrap{z-index:10;}
+.cui_subnav_wrap{display:none;white-space:nowrap;position:absolute;z-index:8;left:0;top:40px;line-height:40px;color:#666;width:100%;background-color:#fff;}
+.cui_nav_current .cui_subnav_wrap{display:block;}
+.cui_nav_current .cui_sub_nav{background:#fff;}
+.cui_sub_nav{width:auto;height:37px;line-height:37px;border:1px solid #bbb;border-top:none;font-size:14px;}
+.cui_sub_nav:before,.cui_sub_nav:after{content: '\0020';display: block;clear: both; height:0; overflow:hidden;}
+.cui_sub_nav li{position:relative;float:left;display:inline-block;height:auto;margin:0 5px;color:#333;font-size:14px;}
+.cui_sub_nav li a{color: #333;font-size:14px;}
+.cui_sub_nav a:hover,.cui_sub_nav a.cui_sub_current{color:#06c;text-decoration: none;}
+/*=icon*/
+.cui_ico_new{position:absolute;z-index:1;left:602px;top:52px;width:24px;height:16px;overflow:hidden;background-position:0 -95px;}
+.cui_ico_beta{position:absolute;z-index:1;margin-top:5px;+margin-top:-3px;_margin-top:-8px;width:29px;height:14px;overflow:hidden;background-position:0 -114px;}
+.cui_ico_sale{position:absolute;z-index:1;top:55px;left:465px;width:29px;height:14px;background-position:0 -133px;overflow:hidden;}
+.cui_ico_hot{position:absolute;z-index:1;top:52px;left:355px;width:24px;height:16px;background-position:0 -76px;overflow:hidden;}
+.cui_ico_price{position:absolute;z-index:1;top:52px;left:492px;width:24px;height:16px;background-position:0 -57px;overflow:hidden;}
+.cui_ico_1111{position:absolute;z-index:1;top:54px;left:500px;width:23px;height:14px;background-position:0 -631px;overflow:hidden;}
+.cui_ico_save{position:absolute;z-index:1;top:0;left:42px;width:23px;height:16px;background-position:0 -152px;overflow:hidden;}
+.cui_ico_notejj{position:absolute;z-index:1;top:-13px;left:20px;width:36px;height:16px;background-position:0 -610px;overflow:hidden;}
+
+#cui_nav .cui_sub_nav a .cui_ico_new,
+#cui_nav .cui_sub_nav a .cui_ico_hot,
+#cui_nav .cui_sub_nav a .cui_ico_notejj,
+#cui_nav .cui_sub_nav a .cui_ico_save{top:0px;}
+
+.cui_sub_nav a .cui_ico_new{top:-9px;left:35px;_left:37px;}
+.cui_sub_nav a .cui_ico_notejj{top:-9px;left:52px;_left:54px;}
+.cui_sub_nav a .cui_ico_hot{top:-9px;left:60px;_left:62px;}
+.cui_sub_nav a .cui_ico_save{top:-9px;}
+.cui_subnav_wrap .cui_ico_order{position:absolute;top:10px;right:18px;padding-left:20px;background-position:-67px -542px;line-height:18px;font-size:14px;color:#333;}
+.cui_ico_tips{position:absolute;right:15px;top:14px;display:inline-block;width:25px;height:13px;padding:0 3px;overflow:hidden;background-position: -49px -590px;line-height:13px;text-align:center;color:#de0808;font-family:'Tahoma';font-size:12px;}
+/*#cui_nav_hotel .cui_ico_order{right: 48px;}*/
+#cui_nav_trains .cui_sub_nav a .cui_ico_new{top:-9px;left:62px;_left:64px;}

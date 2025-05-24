@@ -1,0 +1,31 @@
+<!-- edu_14_5_9.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>计算1/1！+1/2！+1/3！+...+1/n!的累加和</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var n = prompt('请输入大于5的正整数n', 10);
+      if (n != null) {
+        if (!isNaN(parseInt(n)) && parseInt(n)>5) {
+          n=parseInt(n)
+          document.write("计算1/1！+1/2！+1/3！+...+1/" + n + "!的和<br/>");
+          for (i = 1, sum = 0; i <= n; i++) {
+            for (j = 1, cj = 1; j <= i; j++) {   /* 计算阶乘 */              
+              cj = cj * j;
+            }
+            document.write(i + "!=" + cj + "&nbsp;&nbsp;&nbsp;阶乘的倒数=" + 1 / cj + "<br/>");
+            sum = sum + 1 / cj; /*  计算累加和，输出时保留2位小数 */
+          }
+          document.write("1/1！+1/2！+1/3！+...+1/" + n + "!=" + sum.toFixed(2));
+        } else {
+          alert('请输入正整数n,并按确定按钮！');
+        }
+      } else {
+        alert('请输入正整数N!');
+      }
+    </script>
+  </body>
+</html>

@@ -5,11 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .calculator-container {
+            background-color: #FAFBFC;
+            width: 410px;
+            height: 450px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .calculator-title {
+            margin: 0;
+        }
+
+        .calculator-body {
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        .calculator-input {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 5px;
+            border: 1px solid black;
+        }
+
+        .calculator-buttons {
+            width: 100%;
+            /* 单元格之间的间距 */
+            border-spacing: 30px;
+            border: 1px solid black;
+        }
+
+        .calculator-button {
+            width: 25%;
+            height: 35px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div>
+    <div class="calculator-container">
+        <div class="header">
+            <h1 class="calculator-title">CASIO<span class="title-dot">.</span></h1>
+        </div>
 
+        <div class="calculator-body">
+            <input type="text" class="calculator-input">
+
+            <table class="calculator-buttons">
+                    <tr>
+                        <td class="calculator-button">1</td>
+                        <td class="calculator-button">2</td>
+                        <td class="calculator-button">3</td>
+                        <td class="calculator-button">+</td>
+                    </tr>
+
+                    <tr>
+                        <td class="calculator-button">4</td>
+                        <td class="calculator-button">5</td>
+                        <td class="calculator-button">6</td>
+                        <td class="calculator-button">-</td>
+                    </tr>
+                    <tr>
+                        <td class="calculator-button">7</td>
+                        <td class="calculator-button">8</td>
+                        <td class="calculator-button">9</td>
+                        <td class="calculator-button">*</td>
+                    </tr>
+                    <tr>
+                        <td class="calculator-button">0</td>
+                        <td class="calculator-button">=</td>
+                        <td class="calculator-button">CE</td>
+                        <td class="calculator-button">/</td>
+                    </tr>
+            </table>
+        </div>
     </div>
 </body>
 

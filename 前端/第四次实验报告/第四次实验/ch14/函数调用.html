@@ -1,0 +1,22 @@
+<!-- edu_14_2_3.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>提示框的应用</title>
+    <script type="text/javascript">
+      function disp_prompt() {
+        var name = prompt("请输入您的姓名", "李大为")
+        if (name != null && name != "") //既不为空，也不为null
+        {
+          document.write("您好，" + name + "!")
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form method="post" action="">
+      <input type="button" onclick="disp_prompt()" value="显示提示框" />
+    </form>
+  </body>
+</html>

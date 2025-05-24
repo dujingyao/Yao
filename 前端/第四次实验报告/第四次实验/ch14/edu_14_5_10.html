@@ -1,0 +1,31 @@
+<!-- edu_14_5_10.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>计算部分∑N!的和</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      document.write("计算部分∑N!的和<br/>");
+      var n = prompt("请输入整数N：", 20);
+      for (i = 1, sum = 0; i <= n; i++) {
+        if (i > 15) {
+          break;
+        } //当循环到第15次时跳出循环
+        //当i为1-5之间的数时结束本次循环进入下1次循环
+        if (i >= 1 && i < 5) {
+          continue;
+        } else { //当i大于等于5时执行循环
+          for (j = 1, cj = 1; j <= i; j++) {
+            cj = cj * j; //计算阶乘          
+          }
+          document.write(i + "!=" + cj + "<br/>");
+          sum = sum + cj; //累加阶乘之和
+        }
+      }
+      i = i - 1
+      document.write("∑" + i + "!=" + sum);
+    </script>
+  </body>
+</html>

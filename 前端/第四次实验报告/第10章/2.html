@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIV+CSS布局实例</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            width: 1006px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 124px;
+            position: relative;
+        }
+        #logo {
+            height: 80px;
+            background-color: #55FF55;
+            margin-bottom: 4px;
+        }
+        #nav {
+            height: 40px;
+            background-color: #56FE45;
+        }
+        #content-area {
+            display: flex;
+            height: 400px;
+            margin: 0 auto;
+        }
+        .content-column {
+            width: 250px;
+            height: 400px;
+        }
+        #content-left {
+            background-color: #90FF66;
+        }
+        #content-center-left {
+            background-color: #99FB99;
+        }
+        #content-center-right {
+            background-color: #88FFAA;
+        }
+        #content-right {
+            background-color: #99FFAE;
+        }
+        #footer {
+            height: 40px;
+            background-color: #66FFCC;
+            clear: both;
+        }
+        /* 分隔线样式 */
+        #logo, #nav, .content-column, #footer {
+            border: 1px solid white;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="logo">logo</div>
+            <div id="nav">nav</div>
+        </div>
+        <div id="content-area">
+            <div id="content-left" class="content-column">Content-left</div>
+            <div id="content-center-left" class="content-column">Content-center-left</div>
+            <div id="content-center-right" class="content-column">Content-center-right</div>
+            <div id="content-right" class="content-column">Content-right</div>
+        </div>
+        <div id="footer">Footer</div>
+    </div>
+</body>
+</html>

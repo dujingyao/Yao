@@ -12,28 +12,29 @@
             background-image: url(../css设计/ch11/image-ex-11-1-bj.jpg);
             background-repeat: no-repeat;
             background-position: center;
+            background-size: cover;
         }
 
         table {
             border: 1px solid black;
             width: 1000px;
-            height: 50px;
-            margin: 0 auto;
-            border-collapse: collapse;
+            height: 500px;
+            margin: auto;
         }
 
         table table {
             border: 0;
             width: 100%;
+            height: 100%;
+            margin: 0;
         }
 
         td {
-            border: 1px solid black;
             font-weight: bold;
             padding-left: 10px;
         }
 
-        .item {
+        .item a {
             text-decoration: none;
             color: black;
         }
@@ -46,7 +47,7 @@
             background-color: red;
             width: 100%;
             height: 20px;
-            padding: 5px 0;
+            padding: 5px auto;
         }
 
         .menu a {
@@ -60,17 +61,7 @@
 
         .menu a:hover {
             background-color: #FEADDE;
-            display: inline-block;
-        }
-
-        .menu table table tr {
-            text-align: center;
-            height: 30px;
-            width: 100%;
-        }
-
-        .menu table table td {
-            width: 20%;
+            /* display: inline-block; */
         }
 
         .caption {
@@ -80,7 +71,7 @@
             width: 376px;
             height: 121px;
             margin: 0 auto;
-            text-align: center;
+            font-size: 30px;
         }
 
         #black {
@@ -94,69 +85,65 @@
 </head>
 
 <body>
-    <table>
+    <table border="1">
         <!-- 第一行 -->
         <tr class="caption">
-            <td>
+            <td colspan="2">
                 <span id="black">学习</span><span id="red">资料</span>
             </td>
         </tr>
         <!-- 第二行 -->
-        <tr class="menu">
-            <td>
-                <table>
+        <tr>
+            <td colspan="2">
+                <table border="1" class="menu">
                     <tr>
-                        <td><a href="#" class="item">首页</a></td>
-                        <td><a href="#" class="item">文件通知</a></td>
-                        <td><a href="#" class="item">上级精神</a></td>
-                        <td><a href="#" class="item">学习资料</a></td>
-                        <td><a href="#" class="item">百年寄语</a></td>
+                        <td><a href="#">首页</a></td>
+                        <td><a href="#">文件通知</a></td>
+                        <td><a href="#">上级精神</a></td>
+                        <td><a href="#">学习资料</a></td>
+                        <td><a href="#">百年寄语</a></td>
                     </tr>
                 </table>
             </td>
         </tr>
         <!-- 第三到九行 -->
-        <tr>
-            <td>
-                <table>
-                    <tr class="item">
-                        <td>2021年07月01日</td>
-                        <td><a href="https://dangjian.gmw.cn/2021-07/01/content_34964879.htm"
-                                class="item">习近平在庆祝中国共产党成立一百周年大会上的讲话</a></td>
-                    </tr>
-                    <tr class="item">
-                        <td>2021年06月29日</td>
-                        <td><a href="http://opinion.people.com.cn/n1/2021/0629/c1003-32143173.html"
-                                class="item">党章党规制作、使用、管理的基本遵循</a></td>
-                    </tr>
-                    <tr class="item">
-                        <td>2021年06月21日</td>
-                        <td><a href="http://theory.people.com.cn/n1/2021/0621/c40531-32135368.html"
-                                class="item">彰显自我革命的最鲜明品格 矢志优势</a></td>
-                    </tr>
-                    <tr class="item">
-                        <td>2021年06月16日</td>
-                        <td><a href="http://dangshi.people.com.cn/n1/2021/0616/c436975-32131684.html" class="item">以史鉴今
-                                砥砺前行</a></td>
-                    </tr>
-                    <tr class="item">
-                        <td>2021年05月31日</td>
-                        <td><a href="http://opinion.people.com.cn/n1/2021/0531/c1003-32117385.html"
-                                class="item">江山就是人民，人民就是江山（人民观点）</a></td>
-                    </tr>
-                    <tr class="item">
-                        <td>2021年05月24日</td>
-                        <td><a href="http://theory.people.com.cn/n1/2021/0524/c40531-32111819.html"
-                                class="item">中国共产党的奋斗历程与伟大传统：《中国共产党简史》导读</a></td>
-                    </tr>
-                    <tr class="item">
-                        <td>2021年06月04日</td>
-                        <td><a href="http://opinion.people.com.cn/n1/2021/0604/c1003-32121979.html"
-                                class="item">让红色文化传承不息（新论）</a></td>
-                    </tr>
-                </table>
+
+        <tr class="item">
+            <td>2021年07月01日</td>
+            <td><a href="https://dangjian.gmw.cn/2021-07/01/content_34964879.htm"
+                    class="item">习近平在庆祝中国共产党成立一百周年大会上的讲话</a></td>
+        </tr>
+        <tr class="item">
+            <td>2021年06月29日</td>
+            <td><a href="http://opinion.people.com.cn/n1/2021/0629/c1003-32143173.html"
+                    class="item">党章党规制作、使用、管理的基本遵循</a></td>
+        </tr>
+        <tr class="item">
+            <td>2021年06月21日</td>
+            <td><a href="http://theory.people.com.cn/n1/2021/0621/c40531-32135368.html" class="item">彰显自我革命的最鲜明品格
+                    矢志优势</a></td>
+        </tr>
+        <tr class="item">
+            <td>2021年06月16日</td>
+            <td><a href="http://dangshi.people.com.cn/n1/2021/0616/c436975-32131684.html" class="item">以史鉴今
+                    砥砺前行</a></td>
+        </tr>
+        <tr class="item">
+            <td>2021年05月31日</td>
+            <td><a href="http://opinion.people.com.cn/n1/2021/0531/c1003-32117385.html"
+                    class="item">江山就是人民，人民就是江山（人民观点）</a></td>
+        </tr>
+        <tr class="item">
+            <td>2021年05月24日</td>
+            <td><a href="http://theory.people.com.cn/n1/2021/0524/c40531-32111819.html"
+                    class="item">中国共产党的奋斗历程与伟大传统：《中国共产党简史》导读</a></td>
+        </tr>
+        <tr class="item">
+            <td>2021年06月04日</td>
+            <td><a href="http://opinion.people.com.cn/n1/2021/0604/c1003-32121979.html" class="item">让红色文化传承不息（新论）</a>
             </td>
         </tr>
+
     </table>
 </body>
 

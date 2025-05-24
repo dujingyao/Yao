@@ -1,0 +1,23 @@
+/* layout1.css */
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+#header {
+	width: 100%;
+	height: 120px;
+	background: #223344;
+}
+
+#main {
+	width: 100%;
+	height: 500px;
+	background: #553344;
+}
+
+#footer {
+	width: 100%;
+	height: 40px;
+	background: #993344;
+}

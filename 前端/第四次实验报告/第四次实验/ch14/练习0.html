@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function qiye(a, b) {
+            var sum = 0;
+            var i = 0;
+            for (i = 0; i < 100; i++) {
+                if (i % 2 == 0)
+                    sum += i;
+            }
+            sum = a + b;
+            alert(sum);
+        }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        变量1:<input type="text" id="name" placeholder="请输入姓名" name="变量1"><br>
+        变量2:<input type="text" id="age" placeholder="请输入年龄" name="变量2"><br>
+        <input type="button" value="执行" onclick="qiye(变量1.value, 变量2.value)"><br>
+    </form>
+</body>
+
+</html>

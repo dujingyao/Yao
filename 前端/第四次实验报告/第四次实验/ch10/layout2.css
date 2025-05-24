@@ -1,0 +1,26 @@
+/* layout2.css */
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+#left {
+	width: 30%;
+	height: 700px;
+	background: #223344;
+	float: left;
+}
+
+#center {
+	width: 50%;
+	height: 700px;
+	background: #553344;
+	float: left;
+}
+
+#right {
+	width: 20%;
+	height: 700px;
+	background: #993344;
+	float: left;
+}

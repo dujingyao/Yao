@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>找出符合条件的数</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .numbers-container {
+            margin: 20px 0;
+            font-family: monospace;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>找出1000~9999能够被17和13同时整除的整数的个数及累加和</h3>
+    <div id="numbersOutput" class="numbers-container"></div>
+    <div id="resultOutput" class="result"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const numbersOutput = document.getElementById('numbersOutput');
+            const resultOutput = document.getElementById('resultOutput');
+            
+            let count = 0;
+            let sum = 0;
+            let numbers = [];
+            let outputLines = [];
+            
+            // 计算17和13的最小公倍数
+            const lcm = 17 * 13; // 221
+            
+            // 找出1000~9999范围内能被221整除的数
+            for (let i = Math.ceil(1000 / lcm) * lcm; i <= 9999; i += lcm) {
+                numbers.push(i);
+                count++;
+                sum += i;
+            }
+            
+            // 格式化输出，每行10个数字
+            for (let i = 0; i < numbers.length; i += 10) {
+                const lineNumbers = numbers.slice(i, i + 10);
+                outputLines.push(lineNumbers.join(' '));
+            }
+            
+            // 显示结果
+            numbersOutput.innerHTML = outputLines.join('<br>');
+            resultOutput.innerHTML = `
+                区间中符合条件的数共有${count}个<br>
+                区间中符合条件的数累加和为${sum}
+            `;
+        });
+    </script>
+</body>
+</html>

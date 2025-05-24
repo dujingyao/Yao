@@ -1,0 +1,59 @@
+/* drapdownmenu.css */
+/* 应用对象：edu_10_2_7.html */
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+/*考虑到不同浏览器兼容性，去除列表项前的符号*/
+
+ul li {
+	height: 30px;
+	width: 115px;
+	list-style: none;
+	float: left;
+	/* display: inline; */
+	font: 0.9em Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+ul li a {
+	color: #FFF;
+	width: 113px;
+	margin: 0px;
+	padding: 0px 0px 0px 8px;
+	text-decoration: none;
+	display: block;
+	background: #808080;
+	line-height: 29px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+ul li ul li {
+	height: 25px;
+}
+
+ul li ul li a {
+	background: #666;
+	line-height: 24px;
+}
+
+ ul li a:hover {
+	background: #666;
+	border-bottom: 1px dashed #FF0000;
+}
+
+ul li ul {
+	visibility: hidden;
+	/*display:none;*/
+}
+
+ul li:hover ul {
+	visibility: visible;
+	/*display:block;*/
+}
+
+ul li ul li a:hover {
+	background: #333;
+}
