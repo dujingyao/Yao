@@ -1,68 +1,66 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 获取表单和输入元素
-    const loginForm = document.getElementById('loginForm');
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const usernameError = document.getElementById('username-error');
-    const passwordError = document.getElementById('password-error');
-    const togglePassword = document.querySelector('.toggle-password');
-    
-    // 设置密码可见性切换
-    UIHelpers.setupPasswordToggle(togglePassword, passwordInput);
+    const loginForm = document.getElementById('loginForm') || document.querySelector('form');
+    const usernameInput = document.getElementById('username') || document.querySelector('input[name="username"]');
+    const passwordInput = document.getElementById('password') || document.querySelector('input[type="password"]');
     
     // 表单提交处理
-    loginForm.addEventListener('submit', function(e) {
+    loginForm && loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // 重置错误消息
-        UIHelpers.hideError(usernameError);
-        UIHelpers.hideError(passwordError);
-        
         let isValid = true;
+        let firstInvalidInput = null;
         
-        // 验证账号
-        if (!usernameInput.value.trim()) {
-            UIHelpers.showError(usernameError, '请输入账号');
+        // 验证账号：只能是字母
+        const username = usernameInput ? usernameInput.value.trim() : '';
+        if (!username) {
+            alert('请输入账号');
+            if (usernameInput) {
+                usernameInput.focus();
+                firstInvalidInput = usernameInput;
+            }
             isValid = false;
-        } else if (!FormValidators.validateUsername(usernameInput.value.trim())) {
-            UIHelpers.showError(usernameError, '账号只能包含字母');
+        } else if (!/^[A-Za-z]+$/.test(username)) {
+            alert('账号只能包含字母');
+            if (usernameInput) {
+                usernameInput.focus();
+                firstInvalidInput = usernameInput;
+            }
             isValid = false;
         }
         
-        // 验证密码
-        if (!passwordInput.value) {
-            UIHelpers.showError(passwordError, '请输入密码');
+        // 验证密码：必须同时包含字母、数字、下划线
+        const password = passwordInput ? passwordInput.value : '';
+        if (!password) {
+            if (isValid) { // 只有在账号验证通过时才提示密码错误
+                alert('请输入密码');
+                if (passwordInput) {
+                    passwordInput.focus();
+                    firstInvalidInput = passwordInput;
+                }
+            }
             isValid = false;
-        } else if (!FormValidators.validatePassword(passwordInput.value)) {
-            UIHelpers.showError(passwordError, '密码必须包含数字、字母和下划线');
+        } else if (
+            !/^[A-Za-z0-9_]+$/.test(password) || // 只能包含字母数字下划线
+            !/[A-Za-z]/.test(password) ||        // 必须有字母
+            !/[0-9]/.test(password) ||           // 必须有数字
+            !/_/.test(password)                  // 必须有下划线
+        ) {
+            if (isValid) { // 只有在账号验证通过时才提示密码错误
+                alert('密码必须同时包含字母、数字和下划线');
+                if (passwordInput) {
+                    passwordInput.focus();
+                    firstInvalidInput = passwordInput;
+                }
+            }
             isValid = false;
-        }
-        
-        // 如果表单无效，聚焦到第一个错误的输入框
-        if (!isValid) {
-            UIHelpers.focusFirstError();
-            return;
         }
         
         // 如果表单有效，可以在这里添加提交逻辑
-        alert('登录成功！');
-        // loginForm.submit(); // 如果需要实际提交表单
-    });
-    
-    // 输入事件处理，实时检查输入内容
-    usernameInput.addEventListener('input', function() {
-        if (this.value.trim() && !FormValidators.validateUsername(this.value.trim())) {
-            UIHelpers.showError(usernameError, '账号只能包含字母');
-        } else {
-            UIHelpers.hideError(usernameError);
-        }
-    });
-    
-    passwordInput.addEventListener('input', function() {
-        if (this.value && !FormValidators.validatePassword(this.value)) {
-            UIHelpers.showError(passwordError, '密码必须包含数字、字母和下划线');
-        } else {
-            UIHelpers.hideError(passwordError);
+        if (isValid) {
+            alert('登录成功！');
+            // 这里可以添加实际的登录逻辑
+            // window.location.href = 'index.html'; // 跳转到首页
         }
     });
 });
