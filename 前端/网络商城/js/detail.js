@@ -1,22 +1,58 @@
 /**
- * 商品详情页功能
+ * 商品详情页JS
  */
 document.addEventListener('DOMContentLoaded', function() {
-    // 初始化放大镜功能
+    // 初始化选项卡功能
+    initTabs();
+    
+    // 初始化放大镜
     initMagnifier();
     
     // 初始化缩略图切换
     initThumbnails();
     
-    // 初始化选项卡
-    initTabs();
+    // 初始化商品选项
+    initProductOptions();
+    
+    // 初始化评价标签过滤
+    initReviewTags();
     
     // 初始化数量选择器
     initQuantitySelector();
-    
-    // 初始化商品选项选择
-    initProductOptions();
 });
+
+/**
+ * 初始化选项卡功能
+ */
+function initTabs() {
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    if (!tabs.length || !tabContents.length) return;
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // 移除所有选项卡的激活状态
+            tabs.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // 激活点击的选项卡
+            this.classList.add('active');
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+            
+            // 如果有锚点，更新URL但不滚动
+            history.replaceState(null, null, `#${tabId}`);
+        });
+    });
+    
+    // 检查URL是否有锚点
+    const hash = window.location.hash;
+    if (hash) {
+        const targetTab = document.querySelector(`.tab[data-tab="${hash.substring(1)}"]`);
+        if (targetTab) targetTab.click();
+    }
+}
 
 /**
  * 初始化放大镜功能
@@ -36,7 +72,7 @@ function initMagnifier() {
     
     // 鼠标进入图片区域
     magnifierImgBox.addEventListener('mouseenter', function(e) {
-        if (window.innerWidth <= 992) return; // 小屏幕禁用放大镜
+        if (window.innerWidth <= 992) return; // 小屏幕下禁用放大镜
         
         magnifierLens.style.display = 'block';
         magnifierPreview.style.display = 'block';
@@ -69,7 +105,7 @@ function initMagnifier() {
         let mouseX = e.clientX - boxRect.left;
         let mouseY = e.clientY - boxRect.top;
         
-        // 获取镜片尺寸
+        // 镜片尺寸
         const lensWidth = magnifierLens.offsetWidth;
         const lensHeight = magnifierLens.offsetHeight;
         
@@ -83,13 +119,9 @@ function initMagnifier() {
         magnifierLens.style.left = (mouseX - lensWidth/2) + 'px';
         magnifierLens.style.top = (mouseY - lensHeight/2) + 'px';
         
-        // 计算预览图像的位置
+        // 更新预览图位置
         const zoomFactor = previewImg.offsetWidth / magnifierImgBox.offsetWidth;
-        const previewX = (mouseX - lensWidth/2) * zoomFactor;
-        const previewY = (mouseY - lensHeight/2) * zoomFactor;
-        
-        // 更新预览图像位置
-        previewImg.style.transform = `translate(-${previewX}px, -${previewY}px)`;
+        previewImg.style.transform = `translate(-${(mouseX - lensWidth/2) * zoomFactor}px, -${(mouseY - lensHeight/2) * zoomFactor}px)`;
     }
 }
 
@@ -105,17 +137,15 @@ function initThumbnails() {
     
     thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('click', function() {
-            // 移除所有缩略图的激活状态
+            // 更新缩略图激活状态
             thumbnails.forEach(t => t.classList.remove('active'));
-            
-            // 激活当前缩略图
             this.classList.add('active');
             
             // 更新主图
             const imgSrc = this.getAttribute('data-img');
             mainImg.src = imgSrc;
             
-            // 如果预览图存在，也更新它
+            // 更新放大镜预览图
             if (magnifierPreview && magnifierPreview.querySelector('img')) {
                 magnifierPreview.querySelector('img').src = imgSrc;
             }
@@ -124,26 +154,83 @@ function initThumbnails() {
 }
 
 /**
- * 初始化选项卡切换
+ * 初始化评价标签过滤
  */
-function initTabs() {
-    const tabs = document.querySelectorAll('.tab');
-    const tabContents = document.querySelectorAll('.tab-content');
+function initReviewTags() {
+    const tags = document.querySelectorAll('.review-tags .tag');
+    if (!tags.length) return;
     
-    if (!tabs.length || !tabContents.length) return;
-    
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // 移除所有选项卡的激活状态
-            tabs.forEach(t => t.classList.remove('active'));
-            tabContents.forEach(c => c.classList.remove('active'));
+    tags.forEach(tag => {
+        tag.addEventListener('click', function() {
+            // 移除所有标签的激活状态
+            tags.forEach(t => t.classList.remove('active'));
             
-            // 激活当前选项卡
+            // 激活点击的标签
             this.classList.add('active');
-            const tabId = this.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
+            
+            // 这里可以添加过滤评价的逻辑
+            // 例如通过AJAX请求获取对应标签的评价
         });
     });
+}
+
+/**
+ * 初始化商品选项
+ */
+function initProductOptions() {
+    // 颜色选择
+    const colorOptions = document.querySelectorAll('.color-option');
+    if (colorOptions.length) {
+        colorOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                colorOptions.forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    }
+    
+    // 尺码选择
+    const sizeOptions = document.querySelectorAll('.size-option:not(.out-of-stock)');
+    if (sizeOptions.length) {
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                sizeOptions.forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    }
+    
+    // 收藏按钮
+    const favoriteBtn = document.querySelector('.favorite');
+    if (favoriteBtn) {
+        favoriteBtn.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('far')) {
+                icon.classList.replace('far', 'fas');
+                showToast('已添加到收藏夹');
+            } else {
+                icon.classList.replace('fas', 'far');
+                showToast('已从收藏夹移除');
+            }
+        });
+    }
+    
+    // 加入购物车按钮
+    const addToCartBtn = document.querySelector('.add-to-cart');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', function() {
+            showToast('已成功加入购物车');
+        });
+    }
+    
+    // 立即购买按钮
+    const buyNowBtn = document.querySelector('.buy-now');
+    if (buyNowBtn) {
+        buyNowBtn.addEventListener('click', function() {
+            // 此处可以添加跳转到结算页面的逻辑
+            showToast('正在跳转到结算页面...');
+        });
+    }
 }
 
 /**
@@ -185,60 +272,39 @@ function initQuantitySelector() {
 }
 
 /**
- * 初始化商品选项选择(颜色、尺码等)
+ * 显示提示信息
+ * @param {string} message - 提示信息
  */
-function initProductOptions() {
-    // 颜色选择
-    const colorOptions = document.querySelectorAll('.color-option');
-    if (colorOptions.length) {
-        colorOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                colorOptions.forEach(o => o.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
+function showToast(message) {
+    // 检查是否已存在toast元素
+    let toast = document.querySelector('.toast-message');
+    
+    if (!toast) {
+        // 创建toast元素
+        toast = document.createElement('div');
+        toast.classList.add('toast-message');
+        document.body.appendChild(toast);
+        
+        // 添加样式
+        toast.style.position = 'fixed';
+        toast.style.top = '20%';
+        toast.style.left = '50%';
+        toast.style.transform = 'translateX(-50%)';
+        toast.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+        toast.style.color = '#fff';
+        toast.style.padding = '12px 20px';
+        toast.style.borderRadius = '4px';
+        toast.style.zIndex = '9999';
+        toast.style.transition = 'opacity 0.3s';
+        toast.style.pointerEvents = 'none';
     }
     
-    // 尺码选择
-    const sizeOptions = document.querySelectorAll('.size-option:not(.out-of-stock)');
-    if (sizeOptions.length) {
-        sizeOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                sizeOptions.forEach(o => o.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    }
+    // 设置消息和显示toast
+    toast.textContent = message;
+    toast.style.opacity = '1';
     
-    // 按钮交互
-    const addToCartBtn = document.querySelector('.add-to-cart');
-    if (addToCartBtn) {
-        addToCartBtn.addEventListener('click', function() {
-            // 这里可以添加加入购物车的逻辑
-            alert('商品已加入购物车！');
-        });
-    }
-    
-    const buyNowBtn = document.querySelector('.buy-now');
-    if (buyNowBtn) {
-        buyNowBtn.addEventListener('click', function() {
-            // 这里可以添加立即购买的逻辑
-            alert('即将跳转到结算页面...');
-        });
-    }
-    
-    const favoriteBtn = document.querySelector('.favorite');
-    if (favoriteBtn) {
-        favoriteBtn.addEventListener('click', function() {
-            // 收藏按钮状态切换
-            const icon = this.querySelector('i');
-            if (icon.classList.contains('far')) {
-                icon.classList.replace('far', 'fas');
-                alert('商品已收藏！');
-            } else {
-                icon.classList.replace('fas', 'far');
-                alert('已取消收藏！');
-            }
-        });
-    }
+    // 2秒后隐藏toast
+    setTimeout(() => {
+        toast.style.opacity = '0';
+    }, 2000);
 }

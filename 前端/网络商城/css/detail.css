@@ -519,13 +519,17 @@
 
 /* 商品详情选项卡 */
 .product-tabs {
-    margin-bottom: 50px;
+    margin: 40px 0;
 }
 
 .tabs {
     display: flex;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 0;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 100;
 }
 
 .tab {
@@ -535,17 +539,19 @@
     cursor: pointer;
     position: relative;
     transition: all 0.3s;
+    font-weight: 500;
+    text-align: center;
+    min-width: 120px;
 }
 
 .tab.active {
     color: #ff6b6b;
-    font-weight: 500;
 }
 
 .tab.active::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     right: 0;
     height: 2px;
@@ -554,6 +560,7 @@
 
 .tab-content {
     display: none;
+    padding: 30px 0;
     animation: fadeIn 0.5s;
 }
 
@@ -561,51 +568,469 @@
     display: block;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* 商品详情内容样式 */
+.description-content {
+    color: #333;
 }
 
-/* 猜你喜欢区域样式 */
+.description-content h3 {
+    font-size: 18px;
+    margin: 20px 0 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+.description-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.detail-images {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.detail-images img {
+    max-width: 100%;
+    display: block;
+}
+
+.description-content ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.description-content ul li {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* 规格参数样式 */
+.specification-content {
+    color: #333;
+}
+
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.spec-table th, .spec-table td {
+    border: 1px solid #eee;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.spec-table th {
+    background-color: #f9f9f9;
+    width: 130px;
+    color: #666;
+    font-weight: normal;
+}
+
+.spec-table td {
+    color: #333;
+}
+
+.size-chart h3 {
+    font-size: 18px;
+    margin: 20px 0 15px;
+    font-weight: 600;
+}
+
+.size-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.size-table th {
+    background-color: #f9f9f9;
+    font-weight: normal;
+    color: #666;
+    padding: 12px 10px;
+    border: 1px solid #eee;
+}
+
+.size-table td {
+    padding: 12px 10px;
+    border: 1px solid #eee;
+    color: #333;
+}
+
+.size-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.size-note {
+    font-size: 13px;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* 用户评价样式 - 基于提供的截图进行优化 */
+.reviews-summary {
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.overall-rating {
+    width: 200px;
+    text-align: center;
+    padding-right: 30px;
+    border-right: 1px solid #eee;
+}
+
+.rating-score {
+    font-size: 36px;
+    font-weight: 600;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+}
+
+.rating-stars {
+    color: #ffca28;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.rating-count {
+    color: #999;
+    font-size: 14px;
+}
+
+.rating-distribution {
+    flex: 1;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rating-level {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.level-label {
+    width: 40px;
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+}
+
+.level-bar {
+    flex: 1;
+    height: 12px;
+    background-color: #eee;
+    border-radius: 6px;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+.level-percent {
+    height: 100%;
+    background-color: #ffca28;
+    border-radius: 6px;
+}
+
+.level-count {
+    width: 40px;
+    font-size: 14px;
+    color: #999;
+}
+
+/* 评价标签 */
+.review-tags {
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.tag-label {
+    font-size: 14px;
+    color: #666;
+    margin-right: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 15px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #666;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tag:hover {
+    background-color: #f0f0f0;
+}
+
+.tag.active {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+/* 评价列表 */
+.review-list {
+    margin-bottom: 30px;
+}
+
+.review-item {
+    display: flex;
+    padding: 25px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.reviewer-info {
+    width: 120px;
+    text-align: center;
+}
+
+.reviewer-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.reviewer-name {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.review-stars {
+    color: #ffca28;
+    font-size: 14px;
+}
+
+.review-content {
+    flex: 1;
+}
+
+.review-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.review-images {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.review-images img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.review-images img:hover {
+    transform: scale(1.05);
+}
+
+.review-time {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.review-spec {
+    font-size: 13px;
+    color: #999;
+}
+
+.load-more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.load-more .btn {
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* 售后服务样式 */
+.service-content h3 {
+    font-size: 18px;
+    margin: 20px 0 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+.service-content .service-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.service-content .service-item i {
+    font-size: 24px;
+    color: #ff6b6b;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.service-content .service-item h4 {
+    font-size: 16px;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.service-content .service-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+.service-process {
+    counter-reset: step;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.service-process li {
+    flex: 1;
+    min-width: 180px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.process-step {
+    width: 30px;
+    height: 30px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.process-info h4 {
+    font-size: 16px;
+    margin: 0 0 5px;
+    color: #333;
+}
+
+.process-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+.service-notes {
+    background-color: #fff8f8;
+    border-left: 3px solid #ff6b6b;
+    padding: 15px 20px;
+    border-radius: 4px;
+}
+
+.service-notes h3 {
+    margin-top: 0;
+}
+
+.service-notes p {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 10px;
+}
+
+.service-notes ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.service-notes ul li {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* 猜你喜欢区域样式优化 */
 .recommended-products {
-    margin: 40px 0;
-    padding: 30px 0;
+    margin: 30px 0;
+    padding: 20px 0;
     background-color: #f9f9f9;
 }
 
 .recommended-products .section-title {
     text-align: center;
-    margin-bottom: 25px;
-    font-size: 22px;
+    margin-bottom: 20px;
+    font-size: 20px;
     font-weight: 600;
     color: #333;
 }
 
 .product-slider {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr); /* 固定4列显示 */
+    gap: 15px;
 }
 
+/* 推荐商品卡片样式调整 - 更加紧凑 */
 .recommended-products .product-card {
     background-color: #fff;
     border-radius: 6px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
-    height: 100%;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
 }
 
 .recommended-products .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 .recommended-products .product-image {
     position: relative;
-    padding-top: 100%;
+    padding-top: 100%; /* 保持1:1的宽高比 */
     overflow: hidden;
+    max-height: 150px; /* 限制最大高度 */
+    flex-shrink: 0;
 }
 
 .recommended-products .product-image img {
@@ -615,32 +1040,52 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
+    transition: transform 0.3s;
 }
 
 .recommended-products .product-info {
-    padding: 12px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    padding: 8px 10px;
+    flex-grow: 0;
+    flex-basis: auto;
 }
 
 .recommended-products .product-info h3 {
-    font-size: 14px;
-    margin: 0 0 8px;
-    line-height: 1.4;
+    font-size: 13px;
+    margin: 0 0 5px;
+    font-weight: normal;
+    line-height: 1.3;
+    height: 34px; /* 固定高度显示两行 */
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    flex-grow: 1;
+}
+
+.recommended-products .product-info h3 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.recommended-products .product-info h3 a:hover {
+    color: #ff6b6b;
 }
 
 .recommended-products .price {
-    font-size: 16px;
+    font-size: 14px;
     color: #ff6b6b;
-    font-weight: 600;
+}
+
+.recommended-products .original-price {
+    font-size: 12px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+
+/* 隐藏猜你喜欢中的悬停图标，使界面更简洁 */
+.recommended-products .hover-icons {
+    display: none;
 }
 
 /* 响应式调整 */
@@ -664,7 +1109,56 @@
 
 @media (max-width: 768px) {
     .product-slider {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 小屏幕下显示两列 */
+    }
+    
+    .tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab {
+        padding: 12px 15px;
+        font-size: 14px;
+        min-width: auto;
+        flex: 1;
+    }
+
+    .reviews-summary {
+        flex-direction: column;
+    }
+    
+    .overall-rating {
+        width: 100%;
+        padding-right: 0;
+        padding-bottom: 20px;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 20px;
+    }
+    
+    .rating-distribution {
+        padding-left: 0;
+    }
+    
+    .review-item {
+        flex-direction: column;
+    }
+    
+    .reviewer-info {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    
+    .reviewer-avatar {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+    
+    .service-process {
+        flex-direction: column;
     }
 }
 
