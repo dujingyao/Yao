@@ -1,0 +1,63 @@
+/* 放大镜专用样式 */
+.magnifier-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.magnifier-img-box {
+    position: relative;
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+.magnifier-img-box img {
+    display: block;
+    width: 100%;
+}
+
+/* 放大镜镜片 */
+.magnifier-lens {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #ff6b6b;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: none;
+    pointer-events: none;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+/* 放大镜预览窗口 */
+.magnifier-preview {
+    position: absolute;
+    top: 0;
+    right: -110%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #eee;
+    background-color: #fff;
+    display: none;
+    z-index: 200;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .magnifier-preview {
+        display: none !important;
+    }
+    
+    .magnifier-lens {
+        display: none !important;
+    }
+    
+    .magnifier-img-box {
+        cursor: default;
+    }
+}

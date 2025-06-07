@@ -1096,11 +1096,13 @@ header .container {
 
 .hidden {
     display: none;
-}   text-align: center;
+    text-align: center;
+}
 
 .visible {
     display: block;
-}   margin-bottom: 20px;
+    margin-bottom: 20px;
+} 
 
 
 .mt-20 {
