@@ -1,0 +1,65 @@
+/* 浮动导航样式 */
+.floating-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px 10px;
+}
+
+.floating-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.floating-nav li {
+    margin: 15px 0;
+}
+
+.floating-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.floating-nav a:hover,
+.floating-nav a.active {
+    color: #ff6b6b;
+}
+
+.floating-nav a i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.floating-nav .back-to-top {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .floating-nav {
+        right: 10px;
+        padding: 10px 8px;
+    }
+    
+    .floating-nav a {
+        font-size: 12px;
+    }
+    
+    .floating-nav a i {
+        font-size: 18px;
+    }
+}

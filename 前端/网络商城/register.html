@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册 - Fashion Mall</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Fashion<span>Mall</span></h1>
+            </div>
+            <div class="top-nav">
+                <ul>
+                    <li><a href="login.html">登录</a></li>
+                    <li><a href="register.html" class="active">注册</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> 购物车</a></li>
+                    <li><a href="user-profile.html"><i class="fas fa-user"></i> 个人中心</a></li>
+                </ul>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索商品...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主导航 -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">女装 <i class="fas fa-angle-down"></i></a></li>
+                <li><a href="#">男装 <i class="fas fa-angle-down"></i></a></li>
+                <li><a href="#">鞋包 <i class="fas fa-angle-down"></i></a></li>
+                <li><a href="#">配饰</a></li>
+                <li><a href="#">特惠</a></li>
+                <li><a href="#">新品</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 注册页面主体 -->
+    <div class="register-container">
+        <div class="register-wrapper">
+            <h2>用户注册</h2>
+            <p class="register-subtitle">加入Fashion Mall，开启您的时尚之旅</p>
+            
+            <form id="registerForm" novalidate>
+                <!-- 基本信息部分 -->
+                <div class="form-section">
+                    <h3><i class="fas fa-user-shield"></i> 基本信息</h3>
+                    
+                    <div class="form-row">
+                        <!-- 账号 -->
+                        <div class="form-group half">
+                            <label for="username">账号 <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="username" name="username" placeholder="请输入账号" required>
+                            </div>
+                            <div class="error-message" id="username-error"></div>
+                        </div>
+                        
+                        <!-- 电子邮箱 -->
+                        <div class="form-group half">
+                            <label for="email">电子邮箱 <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="请输入电子邮箱" required>
+                            </div>
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <!-- 密码 -->
+                        <div class="form-group half">
+                            <label for="password">密码 <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                                <i class="fas fa-eye-slash toggle-password"></i>
+                            </div>
+                            <div class="error-message" id="password-error"></div>
+                        </div>
+                        
+                        <!-- 确认密码 -->
+                        <div class="form-group half">
+                            <label for="confirm-password">确认密码 <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirm-password" name="confirm-password" placeholder="请再次输入密码" required>
+                            </div>
+                            <div class="error-message" id="confirm-password-error"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 个人资料部分 -->
+                <div class="form-section">
+                    <h3><i class="fas fa-address-card"></i> 个人资料</h3>
+                    
+                    <div class="form-row">
+                        <!-- 姓名 -->
+                        <div class="form-group half">
+                            <label for="name">姓名</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-id-card"></i>
+                                <input type="text" id="name" name="name" placeholder="请输入姓名">
+                            </div>
+                        </div>
+                        
+                        <!-- 电话号码 -->
+                        <div class="form-group half">
+                            <label for="phone">电话号码</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="phone" name="phone" placeholder="请输入电话号码">
+                            </div>
+                            <div class="error-message" id="phone-error"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <!-- 出生日期 -->
+                        <div class="form-group half">
+                            <label for="birthdate">出生日期</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-calendar-alt"></i>
+                                <input type="date" id="birthdate" name="birthdate">
+                            </div>
+                        </div>
+                        
+                        <!-- 性别 -->
+                        <div class="form-group half">
+                            <label>性别</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="male" checked>
+                                    <span class="radio-custom"></span>
+                                    男
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="female">
+                                    <span class="radio-custom"></span>
+                                    女
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="other">
+                                    <span class="radio-custom"></span>
+                                    其他
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 兴趣爱好 -->
+                    <div class="form-group">
+                        <label>兴趣爱好</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="fashion">
+                                <span class="checkbox-custom"></span>
+                                时尚服饰
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="sports">
+                                <span class="checkbox-custom"></span>
+                                运动户外
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="electronics">
+                                <span class="checkbox-custom"></span>
+                                数码电子
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="home">
+                                <span class="checkbox-custom"></span>
+                                家居生活
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="beauty">
+                                <span class="checkbox-custom"></span>
+                                美妆护肤
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 用户协议 -->
+                <div class="form-group agreement">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <span class="checkbox-custom"></span>
+                        我已阅读并同意 <a href="#" class="agreement-link">《用户服务协议》</a> 和 <a href="#" class="agreement-link">《隐私政策》</a>
+                    </label>
+                    <div class="error-message" id="agreement-error"></div>
+                </div>
+                
+                <!-- 操作按钮 -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary register-btn">注册</button>
+                    <button type="reset" class="btn btn-outline reset-btn">重置</button>
+                </div>
+                
+                <!-- 已有账号提示 -->
+                <div class="login-link">
+                    <p>已有账号？<a href="login.html">立即登录</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 底部导航 - 横向排列低调版 -->
+    <footer class="footer-nav">
+        <div class="container">
+            <div class="footer-nav-categories">
+                <!-- 关于我们 -->
+                <div class="footer-category">
+                    <h4>关于我们</h4>
+                    <div class="footer-links">
+                        <a href="#">公司简介</a>
+                        <a href="#">企业文化</a>
+                        <a href="#">招贤纳士</a>
+                        <a href="#">联系我们</a>
+                    </div>
+                </div>
+                
+                <!-- 其他导航项... -->
+            </div>
+            
+            <!-- 版权信息 -->
+            <div class="copyright">
+                <p>© 2023 Fashion Mall 时尚商城 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>
