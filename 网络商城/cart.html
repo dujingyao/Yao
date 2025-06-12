@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车 - Fashion Mall</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Fashion<span>Mall</span></h1>
+            </div>
+            <div class="top-nav">
+                <ul>
+                    <li><a href="login.html">登录</a></li>
+                    <li><a href="register.html">注册</a></li>
+                    <li><a href="cart.html" class="active"><i class="fas fa-shopping-cart"></i> 购物车</a></li>
+                    <li><a href="user-profile.html"><i class="fas fa-user"></i> 个人中心</a></li>
+                </ul>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索商品...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主导航 -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">女装 <i class="fas fa-angle-down"></i></a></li>
+                <li><a href="#">男装 <i class="fas fa-angle-down"></i></a></li>
+                <li><a href="#">鞋包 <i class="fas fa-angle-down"></i></a></li>
+                <li><a href="#">配饰</a></li>
+                <li><a href="#">特惠</a></li>
+                <li><a href="#">新品</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 面包屑导航 -->
+    <!-- <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li>购物车</li>
+            </ul>
+        </div>
+    </div> -->
+
+    <!-- 购物车主体部分 -->
+    <section class="cart-container">
+        <div class="container">
+            <h1 class="cart-title">我的购物车</h1>
+            
+            <!-- 购物车头部 -->
+            <div class="cart-header">
+                <div class="cart-select-all">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="select-all">
+                        <span class="checkbox-custom"></span>
+                        全选
+                    </label>
+                </div>
+                <div class="cart-column-labels">
+                    <div class="column-product">商品信息</div>
+                    <div class="column-price">单价</div>
+                    <div class="column-quantity">数量</div>
+                    <div class="column-subtotal">小计</div>
+                    <div class="column-operation">操作</div>
+                </div>
+            </div>
+            
+            <!-- 购物车商品列表 -->
+            <div class="cart-items">
+                <!-- 商品1 -->
+                <div class="cart-item">
+                    <div class="item-select">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="item-checkbox" checked>
+                            <span class="checkbox-custom"></span>
+                        </label>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-image">
+                            <img src="img/product1.jpg" alt="时尚碎花连衣裙">
+                        </div>
+                        <div class="item-details">
+                            <h3 class="item-title">时尚碎花连衣裙 春夏新款气质淑女裙</h3>
+                            <div class="item-attrs">
+                                <span class="attr">颜色：粉色</span>
+                                <span class="attr">尺码：M</span>
+                            </div>
+                            <div class="item-services">
+                                <span class="service-tag"><i class="fas fa-shield-alt"></i> 7天无理由退换</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-price">
+                        <div class="price-current">¥299</div>
+                        <div class="price-original">¥399</div>
+                    </div>
+                    <div class="item-quantity">
+                        <div class="quantity-control">
+                            <button class="quantity-decrease">-</button>
+                            <input type="number" value="1" min="1" max="99" class="quantity-input">
+                            <button class="quantity-increase">+</button>
+                        </div>
+                    </div>
+                    <div class="item-subtotal">¥299</div>
+                    <div class="item-operations">
+                        <a href="#" class="op-delete"><i class="fas fa-trash-alt"></i> 删除</a>
+                        <a href="#" class="op-fav"><i class="far fa-heart"></i> 收藏</a>
+                    </div>
+                </div>
+                
+                <!-- 商品2 -->
+                <div class="cart-item">
+                    <div class="item-select">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="item-checkbox" checked>
+                            <span class="checkbox-custom"></span>
+                        </label>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-image">
+                            <img src="img/product2.jpg" alt="纯棉休闲T恤">
+                        </div>
+                        <div class="item-details">
+                            <h3 class="item-title">纯棉休闲T恤 夏季透气短袖圆领打底衫</h3>
+                            <div class="item-attrs">
+                                <span class="attr">颜色：白色</span>
+                                <span class="attr">尺码：L</span>
+                            </div>
+                            <div class="item-services">
+                                <span class="service-tag"><i class="fas fa-shield-alt"></i> 7天无理由退换</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-price">
+                        <div class="price-current">¥129</div>
+                        <div class="price-original">¥169</div>
+                    </div>
+                    <div class="item-quantity">
+                        <div class="quantity-control">
+                            <button class="quantity-decrease">-</button>
+                            <input type="number" value="2" min="1" max="99" class="quantity-input">
+                            <button class="quantity-increase">+</button>
+                        </div>
+                    </div>
+                    <div class="item-subtotal">¥258</div>
+                    <div class="item-operations">
+                        <a href="#" class="op-delete"><i class="fas fa-trash-alt"></i> 删除</a>
+                        <a href="#" class="op-fav"><i class="far fa-heart"></i> 收藏</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 购物车底部操作区 -->
+            <div class="cart-footer">
+                <div class="cart-operations">
+                    <div class="cart-select-all">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="select-all-bottom" checked>
+                            <span class="checkbox-custom"></span>
+                            全选
+                        </label>
+                    </div>
+                    <div class="cart-batch-operations">
+                        <a href="#" class="batch-delete"><i class="fas fa-trash-alt"></i> 删除选中商品</a>
+                        <a href="#" class="batch-fav"><i class="far fa-heart"></i> 移入收藏夹</a>
+                        <a href="#" class="batch-clear"><i class="fas fa-broom"></i> 清空购物车</a>
+                    </div>
+                </div>
+                
+                <div class="cart-settlement">
+                    <div class="settlement-info">
+                        <div class="selected-count">已选商品 <span>3</span> 件</div>
+                        <div class="total-price">合计（不含运费）：<span class="price-total">¥557</span></div>
+                    </div>
+                    
+                    <div class="promotion-info">
+                        <div class="promotion-item">
+                            <i class="fas fa-tags"></i> 已享受满500减50优惠
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary checkout-btn">去结算</button>
+                </div>
+            </div>
+            
+            <!-- 空购物车提示 (默认隐藏) -->
+            <div class="empty-cart" style="display: none;">
+                <div class="empty-cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <p>您的购物车还是空的，快去挑选心仪的商品吧~</p>
+                <a href="index.html" class="btn btn-primary">去购物</a>
+            </div>
+            
+            <!-- 猜你喜欢 -->
+            <div class="cart-recommend">
+                <h3>猜你喜欢</h3>
+                <div class="recommend-products">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/product3.jpg" alt="时尚牛仔外套">
+                            <div class="hover-icons">
+                                <a href="#"><i class="fas fa-heart"></i></a>
+                                <a href="detail.html"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="detail.html">时尚牛仔外套</a></h3>
+                            <div class="price">¥359</div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/product4.jpg" alt="舒适休闲鞋">
+                            <div class="hover-icons">
+                                <a href="#"><i class="fas fa-heart"></i></a>
+                                <a href="detail.html"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="detail.html">舒适休闲鞋</a></h3>
+                            <div class="price">¥249 <span class="original-price">¥299</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/product5.jpg" alt="针织开衫">
+                            <div class="hover-icons">
+                                <a href="#"><i class="fas fa-heart"></i></a>
+                                <a href="detail.html"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="detail.html">针织开衫</a></h3>
+                            <div class="price">¥199 <span class="original-price">¥259</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="img/product1.jpg" alt="时尚连衣裙">
+                            <div class="hover-icons">
+                                <a href="#"><i class="fas fa-heart"></i></a>
+                                <a href="detail.html"><i class="fas fa-eye"></i></a>
+                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="detail.html">时尚碎花连衣裙</a></h3>
+                            <div class="price">¥299 <span class="original-price">¥399</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部导航 - 横向排列低调版 -->
+    <footer class="footer-nav">
+        <div class="container">
+            <div class="footer-nav-categories">
+                <!-- 关于我们 -->
+                <div class="footer-category">
+                    <h4>关于我们</h4>
+                    <div class="footer-links">
+                        <a href="#">公司简介</a>
+                        <a href="#">企业文化</a>
+                        <a href="#">招贤纳士</a>
+                        <a href="#">联系我们</a>
+                    </div>
+                </div>
+                
+                <!-- 购物指南 -->
+                <div class="footer-category">
+                    <h4>购物指南</h4>
+                    <div class="footer-links">
+                        <a href="#">购物流程</a>
+                        <a href="#">会员介绍</a>
+                        <a href="#">常见问题</a>
+                        <a href="#">网站地图</a>
+                    </div>
+                </div>
+                
+                <!-- 配送方式 -->
+                <div class="footer-category">
+                    <h4>配送方式</h4>
+                    <div class="footer-links">
+                        <a href="#">配送说明</a>
+                        <a href="#">配送费用</a>
+                        <a href="#">配送时间</a>
+                        <a href="#">验货与签收</a>
+                    </div>
+                </div>
+                
+                <!-- 支付方式 -->
+                <div class="footer-category">
+                    <h4>支付方式</h4>
+                    <div class="footer-links">
+                        <a href="#">货到付款</a>
+                        <a href="#">在线支付</a>
+                        <a href="#">分期付款</a>
+                        <a href="#">优惠券说明</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 联系信息 -->
+            <div class="footer-contact">
+                <p><i class="fas fa-map-marker-alt"></i> 地址：河南工学院</p>
+                <p><i class="fas fa-phone"></i> 电话：18864611446</p>
+                <p><i class="fas fa-envelope"></i> 邮箱：11092283712@qq.com</p>
+            </div>
+            
+            <!-- 社交媒体图标 -->
+            <div class="social-media">
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-qq"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <!-- 版权信息 -->
+            <div class="copyright">
+                <p>© 2023 Fashion Mall 时尚商城 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
