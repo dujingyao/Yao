@@ -1,0 +1,35 @@
+4-Channel to 5-Channel Color Conversion Report
+=======================================================
+
+1. Algorithm Overview
+--------------------
+• Source: 4-channel RGBV (Red, Green, Blue, Violet)
+• Target: 5-channel RGBCX (Red, Green, Blue, Cyan, eXtra)
+• Strategy: Intelligent mapping with V-channel decomposition
+
+2. Performance Metrics
+--------------------
+Average Color Difference: 0.256110
+Maximum Color Difference: 0.710023
+Standard Deviation: 0.178175
+
+3. Quality Distribution
+--------------------
+Excellent (< 0.01): 0.1%
+Good (0.01-0.03): 2.0%
+Acceptable (0.03-0.06): 4.6%
+Poor (≥ 0.06): 93.3%
+
+4. Technical Features
+--------------------
+• Polygon-based gamut detection
+• Adaptive compression based on V-channel intensity
+• V-channel decomposition (60% C + 40% X)
+• Perceptual consistency preservation
+
+5. Applications
+--------------------
+• High-end LED displays with extended color gamut
+• Professional video processing and broadcast
+• Advanced color management systems
+• Next-generation display technologies

@@ -1,0 +1,40 @@
+PSO-Optimized 4-Channel to 5-Channel Color Conversion Report
+======================================================================
+
+1. PSO ALGORITHM CONFIGURATION
+-----------------------------------
+Swarm Size: 30
+Max Iterations: 100
+Inertia Weight: 0.7
+Learning Factors: c1=1.5, c2=1.5
+Parameter Bounds: (-2.0, 2.0)
+
+2. OPTIMIZATION RESULTS
+-------------------------
+Training Score: 0.9573
+Average ΔE*ab: 0.6996
+Median ΔE*ab: 0.5162
+Maximum ΔE*ab: 3.6463
+Standard Deviation: 0.6457
+
+3. QUALITY DISTRIBUTION
+-------------------------
+Excellent (ΔE<1): 82.3%
+Good (1≤ΔE<3): 16.4%
+Acceptable (3≤ΔE<6): 1.3%
+Poor (ΔE≥6): 0.0%
+
+4. TRANSFORMATION MATRIX
+-------------------------
+Optimized 4x5 transformation matrix:
+Row 0: [1.06258272 0.         0.         0.23030716 0.2689519 ]
+Row 1: [0.         1.03244487 0.         0.1        0.07386533]
+Row 2: [0.19993506 0.         0.75       0.15598959 0.0575702 ]
+Row 3: [0.         0.         0.         0.4618966  0.38854233]
+
+5. TECHNICAL ACHIEVEMENTS
+-------------------------
+• PSO-based global optimization of transformation parameters
+• CIE ΔE*ab perceptual color difference minimization
+• Data-driven parameter tuning for optimal conversion
+• Professional-grade color management solution

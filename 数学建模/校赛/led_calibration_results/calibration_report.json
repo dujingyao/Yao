@@ -1,0 +1,88 @@
+{
+  "original_metrics": {
+    "Red": {
+      "mean": 176.3199511547984,
+      "std": 34.34492037541489,
+      "min": 110.0,
+      "max": 280.95839537289004,
+      "cv": 0.19478748803226525,
+      "uniformity": 0.8052125119677347,
+      "target_deviation_mean": 46.93015095983357,
+      "target_deviation_max": 110.0,
+      "spatial_uniformity": 0.08526789815752328
+    },
+    "Green": {
+      "mean": 219.7107976131741,
+      "std": 14.597329653713478,
+      "min": 172.7239370811368,
+      "max": 268.2627463895425,
+      "cv": 0.06643883601667015,
+      "uniformity": 0.9335611639833299,
+      "target_deviation_mean": 11.708940371128204,
+      "target_deviation_max": 48.262746389542485,
+      "spatial_uniformity": 0.08777201707630011
+    },
+    "Blue": {
+      "mean": 213.60603510079653,
+      "std": 16.713763804008025,
+      "min": 152.65555010208345,
+      "max": 267.3068211353407,
+      "cv": 0.07824574711159787,
+      "uniformity": 0.9217542528884022,
+      "target_deviation_mean": 14.63756322334277,
+      "target_deviation_max": 67.34444989791655,
+      "spatial_uniformity": 0.09050074962400186
+    },
+    "Overall": {
+      "average_cv": 0.1131573570535111,
+      "average_uniformity": 0.886842642946489,
+      "quality_grade": "一般"
+    }
+  },
+  "calibrated_metrics": {
+    "Red": {
+      "mean": 176.09579141165926,
+      "std": 37.671752047977925,
+      "min": 70.30693371949337,
+      "max": 307.2637889061182,
+      "cv": 0.21392761147773623,
+      "uniformity": 0.7860723885222638,
+      "target_deviation_mean": 48.73901045154704,
+      "target_deviation_max": 149.69306628050663,
+      "spatial_uniformity": 0.05270326377181555
+    },
+    "Green": {
+      "mean": 220.04368786629396,
+      "std": 23.725681276045332,
+      "min": 99.1499935834987,
+      "max": 359.82554037819284,
+      "cv": 0.10782259425892672,
+      "uniformity": 0.8921774057410733,
+      "target_deviation_mean": 18.57865157449374,
+      "target_deviation_max": 139.82554037819284,
+      "spatial_uniformity": 0.04725013164244227
+    },
+    "Blue": {
+      "mean": 213.98155725596854,
+      "std": 25.018249624813137,
+      "min": 101.89753441458137,
+      "max": 323.55918878545884,
+      "cv": 0.11691778462424153,
+      "uniformity": 0.8830822153757585,
+      "target_deviation_mean": 20.491772496202383,
+      "target_deviation_max": 118.10246558541863,
+      "spatial_uniformity": 0.04842948577496349
+    },
+    "Overall": {
+      "average_cv": 0.14622266345363483,
+      "average_uniformity": 0.8537773365463651,
+      "quality_grade": "一般"
+    }
+  },
+  "improvement_summary": {
+    "red_cv_improvement": -9.826156514888956,
+    "green_cv_improvement": -62.28850582492592,
+    "blue_cv_improvement": -49.423820386669355,
+    "overall_uniformity_improvement": -3.728429915172557
+  }
+}
